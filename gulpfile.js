@@ -12,6 +12,8 @@ const imageminPngquant = require("imagemin-pngquant");
 // Paths for copy2-src
 var scssSrc = ["node_modules/bootstrap/scss/**/*.scss"];
 var jsSrc = ["node_modules/bootstrap/dist/js/**/*.js"];
+var faCss = ["node_modules/font-awesome/css/**/*.css"];
+var faFonts = ["node_modules/font-awesome/fonts/*"];
 
 // Copy the SCSS and JS files from node_modules/bootstrap
 // SCSS
@@ -21,6 +23,14 @@ gulp.task("scss2src", function () {
 // JS
 gulp.task("js2src", function () {
   return gulp.src(jsSrc).pipe(gulp.dest("src/js"));
+});
+
+// fonts
+gulp.task("faCss2Css", function () {
+    return gulp.src(faCss).pipe(gulp.dest("css"));
+});
+gulp.task("fonts2fonts", function () {
+    return gulp.src(faFonts).pipe(gulp.dest("fonts"));
 });
 
 // Minify Assets
@@ -72,8 +82,10 @@ gulp.task(
     "compress",
     "sass",
     "minify-css",
+    "fonts2fonts",
+    "faCss2Css",
     async function () {
-      log("Imported SCSS and JS, Run `gulp serve` to run a local server");
+      log("Imported SCSS,Fonts and JS, Run `gulp serve` to run a local server");
     }
   )
 );
