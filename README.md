@@ -5,6 +5,7 @@ Boostrap 5 Starter Template
 * Minify-CSS
 * Compress JS
 * ImageMin
+* Font-Awesome
 
 # Installation
 
