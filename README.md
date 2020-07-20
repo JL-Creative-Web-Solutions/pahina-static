@@ -4,6 +4,7 @@ Boostrap 5 Starter Template
 # Quick Features
 * Minify-CSS
 * Compress JS
+* ImageMin
 
 # Installation
 
